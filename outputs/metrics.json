@@ -1,0 +1,537 @@
+{
+  "seed": 7,
+  "penalties": {
+    "n": 482,
+    "goals": 362,
+    "conversion": 0.7510373443983402
+  },
+  "data": {
+    "matches": 1844,
+    "shots_open_play": 45636,
+    "by_group": {
+      "men_club": {
+        "matches": 1517,
+        "shots": 37488,
+        "goals": 3569,
+        "goal_rate": 0.09520379854886897
+      },
+      "men_national": {
+        "matches": 64,
+        "shots": 1430,
+        "goals": 152,
+        "goal_rate": 0.1062937062937063
+      },
+      "women_club": {
+        "matches": 263,
+        "shots": 6718,
+        "goals": 771,
+        "goal_rate": 0.114766299493897
+      }
+    },
+    "freeze_frame_share": 1.0
+  },
+  "split": {
+    "train_shots": 29933,
+    "train_matches": 1213,
+    "test_shots": 7555,
+    "test_matches": 304
+  },
+  "cv": [
+    {
+      "model": "logit_distance",
+      "cv_log_loss": 0.2804924507210776,
+      "cv_se": 0.003989926674613781
+    },
+    {
+      "model": "logit_geometry",
+      "cv_log_loss": 0.2780621682252737,
+      "cv_se": 0.003946710173048826
+    },
+    {
+      "model": "gam_geometry",
+      "cv_log_loss": 0.2770182485439749,
+      "cv_se": 0.0040236155508297025
+    },
+    {
+      "model": "logit_context",
+      "cv_log_loss": 0.2594050219255643,
+      "cv_se": 0.004978242343155938
+    },
+    {
+      "model": "boosting_context",
+      "cv_log_loss": 0.25955581582824877,
+      "cv_se": 0.004994784825050874
+    },
+    {
+      "model": "boosting_defenders",
+      "cv_log_loss": 0.25202735428419637,
+      "cv_se": 0.0051893447590036015
+    }
+  ],
+  "shipped": "boosting_defenders",
+  "one_se_margin": 0.0,
+  "test": {
+    "logit_distance": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.27835137960089545,
+      "brier": 0.07778134191335391,
+      "auc": 0.7315269616892371,
+      "ece": 0.014609684208994764,
+      "xg_total": 724.6393994687588,
+      "xg_over_goals": 1.0441489905889896
+    },
+    "logit_geometry": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.27578710881842683,
+      "brier": 0.07708368850395537,
+      "auc": 0.7354994209849178,
+      "ece": 0.015419125765321545,
+      "xg_total": 723.1036076024109,
+      "xg_over_goals": 1.0419360340092376
+    },
+    "gam_geometry": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.2748041500361283,
+      "brier": 0.07694366556317432,
+      "auc": 0.7359109480264134,
+      "ece": 0.0123178859491047,
+      "xg_total": 721.3559263725828,
+      "xg_over_goals": 1.0394177613437792
+    },
+    "logit_context": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.2520963484408006,
+      "brier": 0.07056565813090357,
+      "auc": 0.7945244116706928,
+      "ece": 0.008635538328645028,
+      "xg_total": 721.8074845695667,
+      "xg_over_goals": 1.0400684215699807
+    },
+    "boosting_context": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.2511539481489428,
+      "brier": 0.07092598521768911,
+      "auc": 0.8000989807066379,
+      "ece": 0.009419049464631115,
+      "xg_total": 720.1612245350225,
+      "xg_over_goals": 1.0376962889553638
+    },
+    "boosting_defenders": {
+      "n_shots": 7555,
+      "goals": 694,
+      "log_loss": 0.24456578422735026,
+      "brier": 0.06892965997917819,
+      "auc": 0.812134177767081,
+      "ece": 0.006394393289903976,
+      "xg_total": 717.379050435436,
+      "xg_over_goals": 1.0336873925582653
+    }
+  },
+  "test_reference_statsbomb": {
+    "n_shots": 7555,
+    "goals": 694,
+    "log_loss": 0.24484350050770837,
+    "brier": 0.06815070573369478,
+    "auc": 0.8062521447919936,
+    "ece": 0.01366630049344805,
+    "xg_total": 680.7026879929999,
+    "xg_over_goals": 0.9808396080590777
+  },
+  "shipped_vs_other_log_loss": {
+    "logit_distance": {
+      "diff": -0.0337855953735452,
+      "lo": -0.039380086945765246,
+      "hi": -0.02809811829659359
+    },
+    "logit_geometry": {
+      "diff": -0.03122132459107656,
+      "lo": -0.03651964722980429,
+      "hi": -0.02594356355761433
+    },
+    "gam_geometry": {
+      "diff": -0.03023836580877805,
+      "lo": -0.03558884083031908,
+      "hi": -0.024947941694255946
+    },
+    "logit_context": {
+      "diff": -0.007530564213450315,
+      "lo": -0.011112529519622487,
+      "hi": -0.003836099993804277
+    },
+    "boosting_context": {
+      "diff": -0.00658816392159258,
+      "lo": -0.009456891214356875,
+      "hi": -0.003588519977394126
+    }
+  },
+  "shipped_auc_ci": [
+    0.7976372659975123,
+    0.8274627054227567
+  ],
+  "split_scheme": [
+    {
+      "scheme": "random rows",
+      "log_loss": 0.2514027096217356
+    },
+    {
+      "scheme": "whole matches",
+      "log_loss": 0.25202735428419637
+    }
+  ],
+  "transfer": {
+    "World Cup 2022": {
+      "shipped": {
+        "n_shots": 1430,
+        "goals": 152,
+        "log_loss": 0.2670167574066777,
+        "brier": 0.07698852217422571,
+        "auc": 0.8146003212255991,
+        "ece": 0.019738761808704052,
+        "xg_total": 146.93869364391566,
+        "xg_over_goals": 0.9667019318678661
+      },
+      "distance_only": {
+        "n_shots": 1430,
+        "goals": 152,
+        "log_loss": 0.2997658608954103,
+        "brier": 0.08687517400087318,
+        "auc": 0.7492690058479532,
+        "ece": 0.02198443851927169,
+        "xg_total": 150.0581487478297,
+        "xg_over_goals": 0.9872246628146691
+      },
+      "statsbomb_reference": {
+        "n_shots": 1430,
+        "goals": 152,
+        "log_loss": 0.2665049367538332,
+        "brier": 0.076191560236061,
+        "auc": 0.8147753479943991,
+        "ece": 0.015616566637622379,
+        "xg_total": 137.87804193019997,
+        "xg_over_goals": 0.9070923811197367
+      },
+      "offset_fit_on_half": {
+        "log_odds_shift": -0.050000000000000044,
+        "before": 0.2616276493251483,
+        "after": 0.2622485407463876
+      }
+    },
+    "FA WSL": {
+      "shipped": {
+        "n_shots": 6718,
+        "goals": 771,
+        "log_loss": 0.2971966718681125,
+        "brier": 0.0854187169208443,
+        "auc": 0.7768469077368898,
+        "ece": 0.010143138401163031,
+        "xg_total": 719.4222329365422,
+        "xg_over_goals": 0.9331027664546591
+      },
+      "distance_only": {
+        "n_shots": 6718,
+        "goals": 771,
+        "log_loss": 0.32939823628091364,
+        "brier": 0.09463492251661522,
+        "auc": 0.7088258213440515,
+        "ece": 0.021445671222048948,
+        "xg_total": 790.2749175106954,
+        "xg_over_goals": 1.024999893009981
+      },
+      "statsbomb_reference": {
+        "n_shots": 6718,
+        "goals": 771,
+        "log_loss": 0.2965963605033148,
+        "brier": 0.08414832602461296,
+        "auc": 0.7799006878093282,
+        "ece": 0.012306905000982436,
+        "xg_total": 727.3081023354,
+        "xg_over_goals": 0.9433308720303502
+      },
+      "offset_fit_on_half": {
+        "log_odds_shift": 0.09000000000000008,
+        "before": 0.29793104303753887,
+        "after": 0.29751239611413527
+      }
+    }
+  },
+  "oof_club": {
+    "n_shots": 37488,
+    "goals": 3569,
+    "log_loss": 0.2504433735378661,
+    "brier": 0.07106428154144424,
+    "auc": 0.8121243693389797,
+    "ece": 0.003338523406091587,
+    "xg_total": 3559.2830925350745,
+    "xg_over_goals": 0.997277414551716
+  },
+  "game_state": {
+    "down 2+": {
+      "shots": 3292,
+      "goals": 263,
+      "xg": 284.44501400817506,
+      "goals_over_xg": 0.9246075235913302
+    },
+    "down 1": {
+      "shots": 7001,
+      "goals": 565,
+      "xg": 621.0361103976878,
+      "goals_over_xg": 0.9097699643233235
+    },
+    "level": {
+      "shots": 18301,
+      "goals": 1623,
+      "xg": 1653.6783808186542,
+      "goals_over_xg": 0.981448399413998
+    },
+    "up 1": {
+      "shots": 5878,
+      "goals": 696,
+      "xg": 639.0659112954318,
+      "goals_over_xg": 1.0890895409976709
+    },
+    "up 2+": {
+      "shots": 3016,
+      "goals": 422,
+      "xg": 361.0576760151254,
+      "goals_over_xg": 1.1687883350313306
+    }
+  },
+  "team_level": {
+    "teams": 82,
+    "corr_goals_xg": 0.9295326404052382,
+    "mae_goals": 4.817118458158703
+  },
+  "players": {
+    "players_with_30_shots": 426,
+    "tau": 0.11455463727442936,
+    "tau_first_half": 0.1664847944773267,
+    "odds_multiplier_1sd": 1.1213739082041732,
+    "split_half_players": 198,
+    "corr_first_half_vs_second_raw": 0.0015324076979266565,
+    "corr_first_half_vs_second_shrunk": -0.010616808708689947,
+    "shortlist_size": 10,
+    "goals_over_xg_per_100_shots": {
+      "raw_top10_first_half": 9.763836574091485,
+      "raw_top10_second_half": 2.5154063916013345,
+      "shrunk_top10_first_half": 7.986281105422457,
+      "shrunk_top10_second_half": 0.8279414160773778,
+      "everyone_second_half": 0.6712873520427459
+    },
+    "value_per_goal_assumption": 1000000,
+    "shots_per_season_assumption": 80,
+    "overpayment_per_player_season_raw_shortlist": 5798744.14599212,
+    "overpayment_ci95": [
+      4193720.7618577145,
+      8312090.139882481
+    ],
+    "top_finishers": [
+      {
+        "player": "Jes\u00fas Joaqu\u00edn Fern\u00e1ndez S\u00e1ez de la Torre",
+        "shots": 39,
+        "goals": 6,
+        "xg": 1.771,
+        "raw_ratio": 3.388,
+        "odds_multiplier": 1.056,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "James David Rodr\u00edguez Rubio",
+        "shots": 39,
+        "goals": 7,
+        "xg": 2.483,
+        "raw_ratio": 2.819,
+        "odds_multiplier": 1.059,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "Mohamed Larbi",
+        "shots": 40,
+        "goals": 7,
+        "xg": 2.77,
+        "raw_ratio": 2.527,
+        "odds_multiplier": 1.055,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "Nicola Rigoni",
+        "shots": 30,
+        "goals": 3,
+        "xg": 1.212,
+        "raw_ratio": 2.475,
+        "odds_multiplier": 1.023,
+        "lo": 0.839,
+        "hi": 1.221
+      },
+      {
+        "player": "Mark Noble",
+        "shots": 31,
+        "goals": 4,
+        "xg": 1.674,
+        "raw_ratio": 2.389,
+        "odds_multiplier": 1.03,
+        "lo": 0.861,
+        "hi": 1.252
+      },
+      {
+        "player": "Younousse Sankhar\u00e9",
+        "shots": 30,
+        "goals": 6,
+        "xg": 2.63,
+        "raw_ratio": 2.282,
+        "odds_multiplier": 1.044,
+        "lo": 0.861,
+        "hi": 1.252
+      },
+      {
+        "player": "Federico Viviani",
+        "shots": 32,
+        "goals": 3,
+        "xg": 1.363,
+        "raw_ratio": 2.2,
+        "odds_multiplier": 1.021,
+        "lo": 0.839,
+        "hi": 1.221
+      },
+      {
+        "player": "Sofiane Boufal",
+        "shots": 51,
+        "goals": 9,
+        "xg": 4.136,
+        "raw_ratio": 2.176,
+        "odds_multiplier": 1.063,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "Marcel B\u00fcchel",
+        "shots": 36,
+        "goals": 2,
+        "xg": 0.952,
+        "raw_ratio": 2.101,
+        "odds_multiplier": 1.014,
+        "lo": 0.839,
+        "hi": 1.221
+      },
+      {
+        "player": "Matteo Politano",
+        "shots": 43,
+        "goals": 5,
+        "xg": 2.398,
+        "raw_ratio": 2.085,
+        "odds_multiplier": 1.034,
+        "lo": 0.861,
+        "hi": 1.252
+      }
+    ],
+    "top_by_shrunk": [
+      {
+        "player": "Luis Alberto Su\u00e1rez D\u00edaz",
+        "shots": 134,
+        "goals": 37,
+        "xg": 26.412,
+        "raw_ratio": 1.401,
+        "odds_multiplier": 1.12,
+        "lo": 0.951,
+        "hi": 1.317
+      },
+      {
+        "player": "Gareth Frank Bale",
+        "shots": 81,
+        "goals": 19,
+        "xg": 9.594,
+        "raw_ratio": 1.98,
+        "odds_multiplier": 1.119,
+        "lo": 0.928,
+        "hi": 1.35
+      },
+      {
+        "player": "Zlatan Ibrahimovi\u0107",
+        "shots": 142,
+        "goals": 31,
+        "xg": 21.299,
+        "raw_ratio": 1.455,
+        "odds_multiplier": 1.111,
+        "lo": 0.928,
+        "hi": 1.317
+      },
+      {
+        "player": "Gonzalo Gerardo Higua\u00edn",
+        "shots": 179,
+        "goals": 33,
+        "xg": 23.167,
+        "raw_ratio": 1.424,
+        "odds_multiplier": 1.11,
+        "lo": 0.928,
+        "hi": 1.317
+      },
+      {
+        "player": "Antoine Griezmann",
+        "shots": 90,
+        "goals": 21,
+        "xg": 13.359,
+        "raw_ratio": 1.572,
+        "odds_multiplier": 1.093,
+        "lo": 0.905,
+        "hi": 1.317
+      },
+      {
+        "player": "Sergio Leonel Ag\u00fcero del Castillo",
+        "shots": 113,
+        "goals": 20,
+        "xg": 13.861,
+        "raw_ratio": 1.443,
+        "odds_multiplier": 1.073,
+        "lo": 0.905,
+        "hi": 1.284
+      },
+      {
+        "player": "Hatem Ben Arfa",
+        "shots": 87,
+        "goals": 12,
+        "xg": 6.481,
+        "raw_ratio": 1.852,
+        "odds_multiplier": 1.07,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "Karim Benzema",
+        "shots": 98,
+        "goals": 24,
+        "xg": 18.343,
+        "raw_ratio": 1.308,
+        "odds_multiplier": 1.066,
+        "lo": 0.905,
+        "hi": 1.284
+      },
+      {
+        "player": "Sofiane Boufal",
+        "shots": 51,
+        "goals": 9,
+        "xg": 4.136,
+        "raw_ratio": 2.176,
+        "odds_multiplier": 1.063,
+        "lo": 0.882,
+        "hi": 1.284
+      },
+      {
+        "player": "Riyad Mahrez",
+        "shots": 81,
+        "goals": 13,
+        "xg": 7.998,
+        "raw_ratio": 1.625,
+        "odds_multiplier": 1.062,
+        "lo": 0.882,
+        "hi": 1.284
+      }
+    ]
+  }
+}
